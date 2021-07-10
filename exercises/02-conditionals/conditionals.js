@@ -6,7 +6,7 @@
  * ```
  */
 function compareEquality(a, b) {
-  if (a == b) {
+  if (a === b) {
     return "Equal";
   }
   return "Not Equal";
@@ -26,9 +26,8 @@ function compareEquality(a, b) {
 
 function testStrictNotEqual(a, b) {
   // Only Change Code Below this Line
-  if (undefined) {
+  if (a !== b) {
     // Only Change Code Above this Line
-
     return "Not Equal";
   }
   return "Equal";
@@ -40,7 +39,7 @@ function testStrictNotEqual(a, b) {
  * Use the logical && operator
  */
 function isTeenager(age) {
-  return; // Return something here
+  return age >= 13 && age <= 19; // Return something here
 }
 
 /**
@@ -51,7 +50,7 @@ function isTeenager(age) {
  * Hint: See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN
  */
 function isNumeric(stringOrNumber) {
-  return; // Return something here
+  return !isNaN(stringOrNumber) || !isNaN(parseFloat(stringOrNumber)); // Return something here
 }
 
 /***
@@ -60,14 +59,14 @@ function isNumeric(stringOrNumber) {
 
 function getLargerNumber(arg1, arg2) {
   let largestNumber;
-
+  arg1 > arg2 ? (largestNumber = arg1) : (largestNumber = arg2);
   return largestNumber;
 }
 
 /** Using the modulus operator determine if the argument is an even or odd number */
 
 function isEvenOrOdd(isEven) {
-  return; // return something here
+  return isEven % 2 === 0; // return something here
 }
 
 /****
@@ -87,7 +86,30 @@ function isEvenOrOdd(isEven) {
  * 
  *  *****/
 
-function caseInSwitch(num) {}
+function caseInSwitch(num) {
+  switch (num) {
+    case 1:
+      return "ONE";
+    case 2:
+      return "TWO";
+    case 3:
+      return "THREE";
+    case 4:
+      return "FOUR";
+    case 5:
+      return "FIVE";
+    case 6:
+      return "SIX";
+    case 7:
+      return "SEVEN";
+    case 8:
+      return "EIGHT";
+    case 9:
+      return "NINE";
+    default:
+      return "PLEASE TRY AGAIN";
+  }
+}
 
 export {
   isEvenOrOdd,
