@@ -101,6 +101,8 @@ function getLastWordInPlaceName(place) {
 function replaceLastName(fullName, newLastName) {
   let firstName = fullName.substring(0, fullName.indexOf(" "));
   let newFullName = firstName + " " + newLastName;
+
+  let newFullName = fullName.replace(firstName);
   return newFullName;
 }
 

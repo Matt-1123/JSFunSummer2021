@@ -5,7 +5,7 @@
 
 const accessingAnItem = () => {
   const cars = ["BMW", "Honda", "Civic"]; // Do not change this line
-  // Write code here
+  return cars[0];
 };
 
 /**
@@ -17,7 +17,7 @@ const accessingAnItem = () => {
 const addToAnArray = () => {
   const languages = ["JavaScript"]; // Do not change this line
 
-  /* Add three more items to the "languages" array here */
+  languages.push("Ruby", "Python", "Java");
 
   return languages;
 };
@@ -30,7 +30,10 @@ const addToAnArray = () => {
  * @example combineArray(['Japan','China','India'], ['USA','UK']) // ['Japan','China','India','USA','UK']
  **/
 
-const combineArray = (array1, array2) => {};
+const combineArray = (array1, array2) => {
+  const combinedArr = [...array1, ...array2];
+  return combinedArr;
+};
 
 /***
  * Create an array that contain two functions:
@@ -42,7 +45,11 @@ const combineArray = (array1, array2) => {};
  * @example createArrayOfFunctions()[1](10, 10) // 0;
  */
 
-const createArrayOfFunctions = () => {};
+const createArrayOfFunctions = () => {
+  const add = (a, b) => a + b;
+  const subtract = (a, b) => a - b;
+  return [add, subtract];
+};
 
 /**
  * Loop through the array using a for loop (or for ... of loop) and return the highest number
@@ -53,7 +60,13 @@ const createArrayOfFunctions = () => {};
  * @example highestNumber([-1, -5, -4]) // -1
  *
  **/
-const highestNumber = (numbers) => {};
+const highestNumber = (numbers) => {
+  let highestNum = numbers[0];
+  for (const num of numbers) {
+    if (num > highestNum) highestNum = num;
+  }
+  return highestNum;
+};
 
 /**
  * Given an array of objects, where each object has an ID,
@@ -91,7 +104,16 @@ const highestNumber = (numbers) => {};
  * Please note, the loop never iterates over the last item, because we found our object. There is no need to continue looping.
  */
 
-const findAndAbort = (arr, id) => {};
+const findAndAbort = (arr, id) => {
+  let personToAbort;
+  for (const person of arr) {
+    if (person.id === id) {
+      personToAbort = person;
+      break;
+    }
+  }
+  return personToAbort;
+};
 
 /**
  * Check to see if a string is a palindrome.
@@ -103,7 +125,7 @@ const findAndAbort = (arr, id) => {};
  * @example isPalindrome("nope"); // false
  */
 
-const isPalindrome = (str) => {};
+const isPalindrome = (str) => str === str.split("").reverse().join("");
 
 /**
  * Use sets to remove duplicate elements from an array
@@ -115,7 +137,10 @@ const isPalindrome = (str) => {};
  * removeDuplicates(); // [2, 3, 4, 5, 6, 7, 32]
  */
 
-const removeDuplicates = (numbers) => {};
+const removeDuplicates = (numbers) => {
+  const set = new Set([...numbers]);
+  return [...set];
+};
 
 export {
   addToAnArray,
