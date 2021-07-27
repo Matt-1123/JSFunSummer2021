@@ -14,7 +14,14 @@
  *
  * (This is technically not a closure. It is here to prepare you for the next problems.)
  */
-const greeter = () => {};
+const greeter = () => {
+  return {
+    hello: (name) => `Hello ${name}!`,
+  };
+};
+
+const say = greeter();
+const greeting = say.hello("Twinkle Toes");
 
 /**
  * Use closures to complete this exercise.
@@ -26,6 +33,8 @@ const calculator = () => {
    * Create a private variable called "sum"
    * @var {number}
    */
+  let sum;
+
   /**
    * Return an object that has two methods:
    *
@@ -37,6 +46,11 @@ const calculator = () => {
    * that should return the value of "sum" above.
    * @returns {number} the value of sum
    */
+  return {
+    // initialize or add to 'sum' variable with 'add' method
+    add: (num) => (sum ? (sum += num) : (sum = num)),
+    getSum: () => sum,
+  };
 };
 
 /**
@@ -65,6 +79,28 @@ const calculator = () => {
  * guessRound2(1); // "No more guesses. The answer was 0"
  */
 
-const guessingGame = (numberOfRounds) => {};
+const guessingGame = (numberOfRounds) => {
+  // Returns a random integer from 0 to 10:
+  const answer = Math.floor(Math.random() * 11);
+
+  let guesses = 0;
+
+  return (guess) => {
+    if (guess === answer) {
+      return "You got it!";
+    }
+
+    guesses++;
+    if (guesses >= numberOfRounds) {
+      return `No more guesses. The answer was ${answer}`;
+    }
+
+    if (guess < answer) {
+      return "You're too low!";
+    } else {
+      return "You're too high!";
+    }
+  };
+};
 
 export { greeter, calculator, guessingGame };
