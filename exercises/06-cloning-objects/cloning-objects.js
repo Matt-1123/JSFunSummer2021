@@ -16,7 +16,12 @@
  *
  * user.email = "icanhascheeseburger@yahoo.com"; // This should not change newUser
  */
-const changeEmail = (user, newEmail) => {};
+const changeEmail = (user, newEmail) => {
+  return {
+    ...user,
+    email: newEmail,
+  };
+};
 
 /**
  * Add a new item to a shopping cart. You should deep copy any array and objects.
@@ -37,6 +42,14 @@ const changeEmail = (user, newEmail) => {};
  * shoppingCart[0].price = 9000000; // This should not change newShoppingCart
  * newItem.price = 10; // This should not change newItem
  */
-const addToCart = (shoppingCart, newItem) => {};
+const addToCart = (shoppingCart, newItem) => {
+  let cart = [...shoppingCart, newItem];
+
+  for (let i = 0; i < cart.length; i++) {
+    cart[i] = { ...cart[i] };
+  }
+
+  return cart;
+};
 
 export { changeEmail, addToCart };
