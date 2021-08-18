@@ -11,5 +11,17 @@
  * Do not change the HTML unless you are instructed to do so.
  */
 (function () {
-  // Put your answers in here
+  // Single Elements
+  console.log(document.querySelector("li"));
+  console.log(document.querySelector("#myId"));
+
+  // Groups of elements
+  console.log(document.querySelectorAll("li"));
+  console.log(document.querySelectorAll(".bg-warning"));
+
+  // Nested elements
+  console.log(document.querySelectorAll(".bg-success div"));
+
+  // Using data attributes
+  console.log(document.querySelectorAll("[data-target]"));
 })();

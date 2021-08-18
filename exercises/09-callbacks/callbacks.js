@@ -21,7 +21,12 @@
  * console.log( calculate(7, 3, subtract) ); // 4
  */
 
-const calculate = (num1, num2, callback) => {};
+const calculate = (num1, num2, callback) => callback(num1, num2);
+
+// const add = (a, b) => a + b;
+// const subtract = (a, b) => a - b;
+
+// console.log(calculate(5, 3, subtract));
 
 /**
  * Create a function called "printer".
@@ -33,6 +38,8 @@ const calculate = (num1, num2, callback) => {};
  *  - Matina
  * @param {string} name instructor name
  */
+
+const printer = (name) => console.log(`*** ${name} ***`);
 
 /**
  * NOTE that the test will use the "printer" function that you completed in the problem above.
@@ -46,7 +53,7 @@ const calculate = (num1, num2, callback) => {};
  * // - Jamal
  * // - Matina
  */
-const printNames = (array, callback) => {};
+const printNames = (array, callback) => array.forEach((name) => callback(name));
 
 /**
  * Returns the first number in an array that meets a condition.
@@ -72,7 +79,8 @@ const printNames = (array, callback) => {};
  * console.log( findFirst([4, 500, 30, 2], isNumberTwoDigits) ) // 30
  */
 
-const findFirst = (arrayOfNum, callback) => {};
+const findFirst = (arrayOfNum, callback) =>
+  arrayOfNum.forEach((num) => callback(num));
 
 /**
  * Ignore everything below this line. It is for the tests.
