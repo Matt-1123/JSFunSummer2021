@@ -104,6 +104,7 @@ termsForm.addEventListener("submit", (e) => {
     e.preventDefault();
     termsFail.classList.remove("hidden");
     termsSuccess.classList.add("hidden");
+    terms.classList.add("is-invalid");
   }
 });
 
