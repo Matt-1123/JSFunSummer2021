@@ -22,6 +22,10 @@ Whatever text below where it says "Enter text" will display on the page. To repl
 Here is an example of code that code be used within a client-side XSS attack. Click on the "Client" button to replicate:
 
 ```
+<img src="1" onerror="alert('Bad code');">
+```
+
+```
 <img src="1" onerror="alert(document.querySelector('#password').value)">
 ```
 
